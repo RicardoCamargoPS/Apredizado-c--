@@ -7,34 +7,21 @@ using namespace std;
 int main()
 {
 
-    int num1, num2;
+    int counter, grade, total, avarage;
 
-    cout << "Entre com dois numeros inteiros \n";
-    cin >> num1 >> num2;
+    total = 0;
+    counter = 1;
 
-    if(num1 == num2){
-        cout << num1 << " é igual ao " << num2 << endl;
-    }
-    if(num1 != num2){
-        cout << num1 << " é diferente ao " << num2 << endl;        
-    }
-    if(num1 < num2){
-        cout << num1 << " é menor ao " << num2 << endl;    
+    while (counter <= 10){
 
-    }
-    if(num1 > num2){
-        cout << num1 << " é maior ao " << num2 << endl;
-        
-    }
-    if(num1 >= num2){
-        cout << num1 << " é maior igual ao " << num2 << endl;
-        
-    }
-    if(num1 <= num2){
-        cout << num1 << " é menor igual ao " << num2 << endl;
-        
+        cout << " Enter grade: ";
+        cin >> grade;
+        total = total + grade;
+        counter = counter + 1;
     }
 
+    avarage = total / 10;
+    cout << "Class avarage is " << avarage << endl;
 
     return 0;
 

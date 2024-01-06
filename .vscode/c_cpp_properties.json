@@ -16,7 +16,6 @@
             "cStandard": "c17",
             "cppStandard": "c++23",
             "intelliSenseMode": "windows-gcc-x64",
-            "compilerPathInCppPropertiesJson": "C:/mingw64/bin/g++.exe",
             "mergeConfigurations": false,
             "browse": {
                 "path": [

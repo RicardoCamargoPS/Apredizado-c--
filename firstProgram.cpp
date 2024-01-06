@@ -1,34 +1,37 @@
+#include <GLFW/glfw3.h>
 
-#include <iostream>
-#include <iomanip>
-
-
-using namespace std;
-
-int main()
+int main(void)
 {
-    float avarage;
-    int counter, grade, total;
+    GLFWwindow* window;
 
-    total = 0;
-    counter = 0;
+    /* Initialize the library */
+    if (!glfwInit())
+        return -1;
 
-    cout << "Entre grade , -1 para o fim ";
-    cin >> grade;
-
-    while(grade != -1){
-        total = total + grade;
-        counter = counter + 1;
-        cout  << "Enter grade,  -1  para o fim: ";
-        cin >> grade;
+    /* Create a windowed mode window and its OpenGL context */
+    window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
+    if (!window)
+    {
+        glfwTerminate();
+        return -1;
     }
 
-    if(counter != 0 ){
-        avarage = (float) total / counter;
-        cout << "Class avarage is " << setprecision(2) << setiosflags(ios::fixed | ios::showpoint) << avarage << endl; 
-    }
-    else
-        cout << "No grades  were entered" << endl;
+    /* Make the window's context current */
+    glfwMakeContextCurrent(window);
 
+    /* Loop until the user closes the window */
+    while (!glfwWindowShouldClose(window))
+    {
+        /* Render here */
+        glClear(GL_COLOR_BUFFER_BIT);
+
+        /* Swap front and back buffers */
+        glfwSwapBuffers(window);
+
+        /* Poll for and process events */
+        glfwPollEvents();
+    }
+
+    glfwTerminate();
     return 0;
 }
